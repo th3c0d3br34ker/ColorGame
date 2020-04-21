@@ -5,7 +5,7 @@
     "scripts": {
         "start": "electron ."
     },
-    "devDependencies": {
+    "depencences": {
         "electron": "^8.2.3"
     }
 }
