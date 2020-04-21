@@ -5,7 +5,7 @@
     "scripts": {
         "start": "electron ."
     },
-    "depencences": {
+    "dependences": {
         "electron": "^8.2.3"
     }
 }
