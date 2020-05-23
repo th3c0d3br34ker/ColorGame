@@ -66,7 +66,7 @@ function loadMain()
 
 	for(var i=0; i<modebuttons.length; i++)
 	{
-		modebuttons[i].onclick = (event) =>
+		modebuttons[i].onclick = () =>
 		{
 			modebuttons[0].classList.remove("selected");
 			modebuttons[1].classList.remove("selected");
@@ -91,7 +91,7 @@ function loadMain()
 	for(var i=0; i<squares.length; i++)
 	{
 		squares[i].style.background = colors[i];
-		squares[i].onclick = (event) =>
+		squares[i].onclick = () =>
 		{
 			var clickedcolor= squares[i].background;
 			if(clickedcolor === pickedcolor)
@@ -109,7 +109,7 @@ function loadMain()
 		}
 	}
 
-	resetbutton.onclick = (event) => {
+	resetbutton.onclick = () => {
         reset();
     };
 
