@@ -1,11 +1,12 @@
 function loadMain()
 {	
+    var numsquares= 9;
     var colordisplay= document.getElementById("colordisplay");
-	var messagedisplay= document.getElementById("message");
-	var h1= document.getElementById("h1");
-	var resetbutton= document.getElementById("reset");
-	var modebuttons= document.getElementsByClassName("mode");
-	var squares= document.querySelectorAll(".square");
+    var messagedisplay= document.getElementById("message");
+    var h1= document.getElementById("h1");
+    var resetbutton= document.getElementById("reset");
+    var modebuttons= document.getElementsByClassName("mode");
+    var squares= document.querySelectorAll(".square");
     
     function changecolors(color)
 	{
@@ -13,15 +14,17 @@ function loadMain()
 		{
 			squares[i].style.background= color;
 		}
-	}
-
-	function pickcolor()
+    }
+    
+    function randomcolor()
 	{
-		var random=Math.floor(Math.random() * colors.length);
-		return colors[random];
-	}
+		var r= Math.floor(Math.random() * 256);
+		var g= Math.floor(Math.random() * 256);
+		var b= Math.floor(Math.random() * 256);
+		return "rgb(" + r + ", " + g + ", " + b + ")";
+    }
 
-	function  generaterandomcolors(num)
+    function  generaterandomcolors(num)
 	{
 		var arr=[];
 		for(var i=0;i<num;i++)
@@ -31,13 +34,15 @@ function loadMain()
 		return arr;
 	}
 
-	function randomcolor()
+    var colors= generaterandomcolors(numsquares);
+
+	function pickcolor()
 	{
-		var r= Math.floor(Math.random() * 256);
-		var g= Math.floor(Math.random() * 256);
-		var b= Math.floor(Math.random() * 256);
-		return "rgb(" + r + ", " + g + ", " + b + ")";
+		var random=Math.floor(Math.random() * colors.length);
+		return colors[random];
     }
+    
+    var pickedcolor= pickcolor();
 
     function reset()
 	{
@@ -61,9 +66,6 @@ function loadMain()
 		}
 	}
 
-    var numsquares= 9;
-    var pickedcolor= pickcolor();
-    var colors= generaterandomcolors(numsquares);
 
 	for(var i=0; i<modebuttons.length; i++)
 	{
