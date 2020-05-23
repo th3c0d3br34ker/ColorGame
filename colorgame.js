@@ -1,6 +1,13 @@
 function loadMain()
 {	
-    	function changecolors(color)
+    var colordisplay= document.getElementById("colordisplay");
+	var messagedisplay= document.getElementById("message");
+	var h1= document.getElementById("h1");
+	var resetbutton= document.getElementById("reset");
+	var modebuttons= document.getElementsByClassName("mode");
+	var squares= document.querySelectorAll(".square");
+    
+    function changecolors(color)
 	{
 		for(var i=0;i < squares.length;i++)
 		{
@@ -57,12 +64,6 @@ function loadMain()
     var numsquares= 9;
     var pickedcolor= pickcolor();
     var colors= generaterandomcolors(numsquares);
-	var colordisplay= document.getElementById("colordisplay");
-	var messagedisplay= document.getElementById("message");
-	var h1= document.getElementById("h1");
-	var resetbutton= document.getElementById("reset");
-	var modebuttons= document.getElementsByClassName("mode");
-	var squares= document.querySelectorAll(".square");
 
 	for(var i=0; i<modebuttons.length; i++)
 	{
@@ -112,8 +113,6 @@ function loadMain()
 	resetbutton.onclick = () => {
         reset();
     };
-
-	console.log("Loaded!")
 }
 
 window.addEventListener("DOMContentLoaded", loadMain);
