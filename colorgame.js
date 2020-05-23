@@ -1,10 +1,62 @@
-window.addEventListener('DOMContentLoaded', loadMain)
-
 function loadMain()
 {	
-	var numsquares= 9;
-	var colors= generaterandomcolors(numsquares);
-	var pickedcolor= pickcolor();
+    	function changecolors(color)
+	{
+		for(var i=0;i < squares.length;i++)
+		{
+			squares[i].style.background= color;
+		}
+	}
+
+	function pickcolor()
+	{
+		var random=Math.floor(Math.random() * colors.length);
+		return colors[random];
+	}
+
+	function  generaterandomcolors(num)
+	{
+		var arr=[];
+		for(var i=0;i<num;i++)
+		{
+			arr.push(randomcolor());
+		}
+		return arr;
+	}
+
+	function randomcolor()
+	{
+		var r= Math.floor(Math.random() * 256);
+		var g= Math.floor(Math.random() * 256);
+		var b= Math.floor(Math.random() * 256);
+		return "rgb(" + r + ", " + g + ", " + b + ")";
+    }
+
+    function reset()
+	{
+		colors= generaterandomcolors(numsquares);
+		pickedcolor= pickcolor();
+		colordisplay.textContent= pickedcolor;
+		resetbutton.textContent= "New colors";
+		messagedisplay.textContent= "";
+		h1.style.background= "steelblue";
+		for(var i=0;i<squares.length;i++)
+		{
+			if(colors[i])
+			{
+				squares[i].style.display="block";
+				squares[i].style.background = colors[i];
+			}
+			else
+			{
+				squares[i].style.display="none";
+			}
+		}
+	}
+
+    var numsquares= 9;
+    var pickedcolor= pickcolor();
+    var colors= generaterandomcolors(numsquares);
 	var colordisplay= document.getElementById("colordisplay");
 	var messagedisplay= document.getElementById("message");
 	var h1= document.getElementById("h1");
@@ -57,60 +109,11 @@ function loadMain()
 		}
 	}
 
-	function reset()
-	{
-		colors= generaterandomcolors(numsquares);
-		pickedcolor= pickcolor();
-		colordisplay.textContent= pickedcolor;
-		resetbutton.textContent= "New colors";
-		messagedisplay.textContent= "";
-		h1.style.background= "steelblue";
-		for(var i=0;i<squares.length;i++)
-		{
-			if(colors[i])
-			{
-				squares[i].style.display="block";
-				squares[i].style.background = colors[i];
-			}
-			else
-			{
-				squares[i].style.display="none";
-			}
-		}
-	}
+	resetbutton.onclick = (event) => {
+        reset();
+    };
 
-	resetbutton.onclick = (event) => {reset();};
-
-	function changecolors(color)
-	{
-		for(var i=0;i < squares.length;i++)
-		{
-			squares[i].style.background= color;
-		}
-	}
-
-	function pickcolor()
-	{
-		var random=Math.floor(Math.random() * colors.length);
-		return colors[random];
-	}
-
-	function  generaterandomcolors(num)
-	{
-		var arr=[];
-		for(var i=0;i<num;i++)
-		{
-			arr.push(randomcolor());
-		}
-		return arr;
-	}
-
-	function randomcolor()
-	{
-		var r= Math.floor(Math.random() * 256);
-		var g= Math.floor(Math.random() * 256);
-		var b= Math.floor(Math.random() * 256);
-		return "rgb(" + r + ", " + g + ", " + b + ")";
-	}
-	console.log('Loaded!')
+	console.log("Loaded!")
 }
+
+window.addEventListener("DOMContentLoaded", loadMain);
