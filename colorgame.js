@@ -1,3 +1,4 @@
+var numsquares= 9;
 var colordisplay= document.getElementById("colordisplay");
 var messagedisplay= document.getElementById("message");
 var h1= document.getElementById("h1");
@@ -13,10 +14,12 @@ function changecolors(color)
     }
 }
 
-function pickcolor()
+function randomcolor()
 {
-    var random=Math.floor(Math.random() * colors.length);
-    return colors[random];
+    var r= Math.floor(Math.random() * 256);
+    var g= Math.floor(Math.random() * 256);
+    var b= Math.floor(Math.random() * 256);
+    return "rgb(" + r + ", " + g + ", " + b + ")";
 }
 
 function  generaterandomcolors(num)
@@ -29,13 +32,15 @@ function  generaterandomcolors(num)
     return arr;
 }
 
-function randomcolor()
+var colors= generaterandomcolors(numsquares);
+
+function pickcolor()
 {
-    var r= Math.floor(Math.random() * 256);
-    var g= Math.floor(Math.random() * 256);
-    var b= Math.floor(Math.random() * 256);
-    return "rgb(" + r + ", " + g + ", " + b + ")";
+    var random=Math.floor(Math.random() * colors.length);
+    return colors[random];
 }
+
+var pickedcolor= pickcolor();
 
 function reset()
 {
@@ -59,9 +64,6 @@ function reset()
     }
 }
 
-var numsquares= 9;
-var pickedcolor= pickcolor();
-var colors= generaterandomcolors(numsquares);
 
 for(var i=0; i<modebuttons.length; i++)
 {
@@ -110,4 +112,4 @@ for(var i=0; i<squares.length; i++)
 
 resetbutton.onclick = () => {
     reset();
-};
+}
