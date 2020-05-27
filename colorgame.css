@@ -1,73 +1,75 @@
-body{
-	background-color: #232323;
-	margin:0;
-	font-family: 'Baloo Tamma 2', cursive;
-
-}
-.square{
-	width:30%;
-	padding-bottom: 30%;
-	margin:1.66%;
-	float:left;
-	background: grey;
-	border-radius: 15%;
-}
-#container{
-	max-width: 600px;
-	margin: 0 auto;
+body {
+  background-color: #232323;
+  margin: 0;
+  font-family: "Baloo Tamma 2", cursive;
 }
 
-#stripe{
-	background: white;
-
-	height:25px;
-	text-align: center;	
+.square {
+  width: 30%;
+  padding-bottom: 30%;
+  margin: 1.66%;
+  float: left;
+  background: grey;
+  border-radius: 15%;
 }
 
-
-.selected{
-	background:  steelblue;
-	color:white;
+#container {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
+#stripe {
+  background: white;
 
-h1{
-	text-align: center;
-	color:white;
-	background: steelblue;
-	margin:0;
-	font-weight: normal;
-	text-transform: uppercase;
-	line-height: 1.1;
-	padding: 20px 0;
+  height: 25px;
+  text-align: center;
 }
 
+.selected {
+  background: steelblue;
+  color: white;
+}
 
-#colordisplay{
-	font-size: 200%;
+h1 {
+  text-align: center;
+  color: white;
+  background: steelblue;
+  margin: 0;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1.1;
+  padding: 20px 0;
 }
-button{
-	border:none;
-	background:none;
-	text-transform: uppercase;
-	height:100%;
-	font-weight: 700;
-	color:steelblue;
-	letter-spacing: 1px;
-	font-size: inherit;
-	transition:all 0.3s;
-	outline:none;
+
+#colordisplay {
+  font-size: 200%;
 }
-#message{
-	display:inline-block;
-	width:20%;
-	text-transform: uppercase;
-	font-weight: 200;
+
+button {
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  height: 100%;
+  font-weight: 700;
+  color: steelblue;
+  letter-spacing: 1px;
+  font-size: inherit;
+  transition: all 0.3s;
+  outline: none;
 }
-button:hover{
-	color:white;
-	background:steelblue;
+
+#message {
+  display: inline-block;
+  width: 20%;
+  text-transform: uppercase;
+  font-weight: 200;
 }
-#container{
-	padding-top: 5%;
+
+button:hover {
+  color: white;
+  background: steelblue;
+}
+
+#container {
+  padding-top: 5%;
 }
