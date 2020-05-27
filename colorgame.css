@@ -64,6 +64,7 @@ button {
   text-transform: uppercase;
   font-weight: 200;
 }
+
 button:hover {
   color: white;
   background: steelblue;

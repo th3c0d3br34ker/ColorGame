@@ -76,21 +76,22 @@ function loadMain() {
   }
 
   function checkAnswer() {
-    squares[i].style.background = colors[i];
-    squares[i].onclick = () => {
-      var clickedcolor = squares[i].background;
-      if (clickedcolor === pickedcolor) {
-        h1.style.background = clickedcolor;
-        resetbutton.textContent = "play again";
-        messagedisplay.textContent = "correct";
-        changecolors(clickedcolor);
-      } else {
-        this.style.background = "#232323";
-        messagedisplay.textContent = "Try Again";
-      }
-    };
+    var clickedcolor = squares[i].background;
+    if (clickedcolor === pickedcolor) {
+      h1.style.background = clickedcolor;
+      resetbutton.textContent = "play again";
+      messagedisplay.textContent = "correct";
+      changecolors(clickedcolor);
+    } else {
+      this.style.background = "#232323";
+      messagedisplay.textContent = "Try Again";
+    }
+
     for (var i = 0; i < squares.length; i++) {
-      checkAnswer();
+      squares[i].style.background = colors[i];
+      squares[i].onclick = () => {
+        checkAnswer();
+      };
     }
   }
 
