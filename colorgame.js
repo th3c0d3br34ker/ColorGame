@@ -6,7 +6,7 @@ function loadMain() {
   var resetbutton = document.getElementById("reset");
   var modebuttons = document.getElementsByClassName("mode");
   var squares = document.querySelectorAll(".square");
-  i = 0;
+  var i = 0;
 
   function changecolors(color) {
     for (i = 0; i < squares.length; i++) {
