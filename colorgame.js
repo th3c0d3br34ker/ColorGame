@@ -5,9 +5,10 @@ var h1 = document.getElementById("h1");
 var resetbutton = document.getElementById("reset");
 var modebuttons = document.getElementsByClassName("mode");
 var squares = document.querySelectorAll(".square");
+var i = 0;
 
 function changecolors(color) {
-  for (var i = 0; i < squares.length; i++) {
+  for(i = 0; i < squares.length; i++) {
     squares[i].style.background = color;
   }
 }
@@ -21,7 +22,7 @@ function randomcolor() {
 
 function generaterandomcolors(num) {
   var arr = [];
-  for (var i = 0; i < num; i++) {
+  for (i = 0; i < num; i++) {
     arr.push(randomcolor());
   }
   return arr;
@@ -43,7 +44,7 @@ function reset() {
   resetbutton.textContent = "New colors";
   messagedisplay.textContent = "";
   h1.style.background = "steelblue";
-  for (var i = 0; i < squares.length; i++) {
+  for (i = 0; i < squares.length; i++) {
     if (colors[i]) {
       squares[i].style.display = "block";
       squares[i].style.background = colors[i];
@@ -68,7 +69,7 @@ function selectSquares() {
   reset();
 }
 
-for (var i = 0; i < modebuttons.length; i++) {
+for (i = 0; i < modebuttons.length; i++) {
   modebuttons[i].onclick = () => {
     selectSquares();
   };
@@ -87,7 +88,7 @@ function checkAnswer() {
   }
 }
 
-for (var i = 0; i < squares.length; i++) {
+for (i = 0; i < squares.length; i++) {
   squares[i].style.background = colors[i];
   squares[i].onclick = () => {
     checkAnswer();
