@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "main": "main.js",
     "scripts": {
-        "start": "electron ."
+        "start": "electron . --no-sandbox"
     },
-    "dependences": {
-        "electron": "^8.2.3"
+    "dependencies": {
+        "electron": "^9.0.4"
     }
 }
