@@ -6,6 +6,6 @@
         "start": "electron . --no-sandbox"
     },
     "dependencies": {
-        "electron": "^10.0.0"
+        "electron": "^10.1.0"
     }
 }
