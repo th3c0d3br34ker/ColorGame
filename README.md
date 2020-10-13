@@ -23,3 +23,5 @@ npm start
 ### Website Version
 
 Checkout the website version of the same [here](https://th3c0d3br34ker.github.io/ColorGame/)
+
+> Made with 🖤 by Jainam Desai
